@@ -3,8 +3,9 @@ import pickle
 import numpy as np
 import pandas as pd
 from itertools import chain
-from example.sentence import Sentence, TagSurfix
+from example.sentence import Sentence
 from example.sentence import TagPrefix
+from example.sentence import TagSurfix
 import json
 
 
@@ -18,6 +19,7 @@ class DataHandler(object):
         self.totalLine = 0
         self.longLine = 0
         self.totalChars = 0
+        self.tag_set = list()
         self.TAGPRE = TagPrefix.convert()
 
     def loadData(self):
@@ -93,10 +95,20 @@ class DataHandler(object):
             nn = nn - 1
 
         token = tokens[:nn - 1].strip()
-        tagpre = tokens[nn:].strip()
-        tagPre = self.TAGPRE.get(tagpre, TagPrefix.general.value)
-        # if tagPre == '':
-        #     tagPre = tagpre + '_'
+        tagPre = tokens[nn:].strip()
+        # tagPre = self.TAGPRE.get(tagpre, TagPrefix.general.value)
+        # # if tagPre == '':
+        # #     tagPre = tagpre + '_'
+        # ner_list = ['nr', 'ns', 'nt', 't', 'nz']
+        # is_ner = False
+        # for ner in ner_list:
+        #     if tagPre.startswith(ner):
+        #         tagPre = ner
+        #         is_ner = True
+        #         break
+        # if not is_ner:
+        #     tagPre = tagPre[0]
+        tagPre += '_'
         if token not in self.spiltChar:
             sentence.addToken(token, tagPre)
         if token in self.spiltChar or end:
@@ -111,6 +123,7 @@ class DataHandler(object):
                 if len(x) > 0 and len(x) == len(y):
                     self.datas.append(x)
                     self.labels.append(y)
+                    self.tag_set.extend(y)
                 else:
                     print('处理一行数据异常, 异常行如下')
                     print(sentence.tokens)
@@ -128,16 +141,8 @@ class DataHandler(object):
 
         set_words = sr_allwords.index
         set_ids = range(1, len(set_words) + 1)
-        tags = ['x']
 
-        for _, memberPre in TagPrefix.__members__.items():
-            for _, memberSuf in TagSurfix.__members__.items():
-                if memberSuf is TagSurfix.S and memberPre is TagPrefix.general:
-                    tags.append(memberPre.value + memberSuf.value)
-                elif memberSuf != TagSurfix.S:
-                    tags.append(memberPre.value + memberSuf.value)
-
-        tags = list(set(tags))
+        tags = list(set(self.tag_set))
         print(tags)
 
         tag_ids = range(len(tags))
@@ -173,6 +178,7 @@ class DataHandler(object):
             pickle.dump(self.y, outp)
         print('** Finished saving the train data.')
 
+
     def X_padding(self, words):
 
         ids = list(self.word2id[words])
@@ -190,7 +196,7 @@ class DataHandler(object):
 
 
 if __name__ == '__main__':
-    data = DataHandler(rootDir='../corpus', dict_path='../data/your_dict.pkl', train_data='../data/your_train_data.pkl')
+    data = DataHandler(rootDir='../corpus/people-2014', dict_path='../data/your_dict.pkl', train_data='../data/your_train_data.pkl')
     data.loadData()
 
     print(data.X)

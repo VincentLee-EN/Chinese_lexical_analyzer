@@ -14,7 +14,7 @@ tf.app.flags.DEFINE_integer('embed_size', 256, 'embedding size')
 tf.app.flags.DEFINE_integer('hidden_size', 512, 'hidden layer node number')
 tf.app.flags.DEFINE_integer('batch_size', 64, 'batch size')
 tf.app.flags.DEFINE_integer('epoch', 9, 'training epoch')
-tf.app.flags.DEFINE_float('lr', 0.001, 'learning rate')
+tf.app.flags.DEFINE_float('lr', 0.01, 'learning rate')
 tf.app.flags.DEFINE_string('save_path','checkpoints/cws.ckpt/','new model save path')
 
 FLAGS = tf.app.flags.FLAGS
@@ -42,14 +42,14 @@ class BiLSTMTrain(object):
         tr_batch_size = FLAGS.batch_size
         max_max_epoch = FLAGS.epoch  # Max epoch
         display_num = 5  # Display 5 pre epoch
-        #tr_batch_num = int(self.data_train.y.shape[0] / tr_batch_size)
-        tr_batch_num = tr_batch_size
+        tr_batch_num = int(self.data_train.y.shape[0] / tr_batch_size)
+        # tr_batch_num = tr_batch_size
         display_batch = int(tr_batch_num / display_num)  
         saver = tf.train.Saver(max_to_keep=10)  
         for epoch in range(max_max_epoch): 
             _lr = FLAGS.lr
             if epoch > max_epoch:
-                _lr = 0.0002
+                _lr *= 1
             print('EPOCH %d， lr=%g' % (epoch + 1, _lr))
             start_time = time.time()
             _losstotal = 0.0

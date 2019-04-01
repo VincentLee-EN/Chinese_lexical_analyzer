@@ -70,7 +70,7 @@ class BiLSTMSegmenter(object):
     
     # Cut line by predefined token
     def cut_word(self, sentence):
-        not_cuts = re.compile(u'[。？.！\?!]')
+        not_cuts = re.compile(u'[，。？！\?!]')
         result = []
         start = 0    
         sentence = self.format_standardization(sentence)
@@ -79,37 +79,45 @@ class BiLSTMSegmenter(object):
             start = seg_sign.end()
         result.extend(self.simple_cut(sentence[start:], self.sess1))
         return result
-    
+
+    def get_ner(self, tag):
+        if tag == 't':
+            tag = 'TIME'
+        elif tag == 'nr':
+            tag = 'PER'
+        elif tag == 'nt':
+            tag = 'ORG'
+        elif tag == 'ns':
+            tag = 'LOC'
+        return tag
+
     # Output format transfor
     def output(self, text, labels):
+        words = list()
+        tags = list()
+
         text += 'x'
         labels.append('O_X')
         rss = text[0]
         flag = labels[0].split('_')
-        result = ''
+
         for i in range(len(labels))[1:]:
             token = labels[i].split('_')
-            if len(token) == 2:
-                tk = token[1]
-            else:
-                tk = token[0]
-            if tk in ['s', 'b', 'X']:
-                result = result + rss + '/' + 'flag' + ' '
+            if token[1] in ['s', 'b', 'X']:
+                words.append(rss)
+                tags.append(self.get_ner(flag[0]))
                 flag = token
                 rss = text[i]
-            # if token[1] == 'B':
-            #     result = result + rss + '/' + flag[1] + ' '
-            #     flag = token
-            #     rss = text[i]
-            if tk in ['m', 'e']:
+            if token[1] in ['m', 'e']:
                 rss += text[i]
-        return result
+
+        return words, tags
 
     def predict(self, text):
         with self.sess1.as_default():
             with self.sess1.graph.as_default():
                 cws_result = self.cut_word(text)
-                print('--label--:', cws_result)
+                #print('--label--:', cws_result)
                 rss = self.output(text, cws_result)
-                print('--result--:', rss)
+                #print('--result--:', rss)
                 return rss
