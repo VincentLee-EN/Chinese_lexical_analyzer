@@ -1,0 +1,418 @@
+EPOCH 1， lr=0.01
+	training loss=64.7331
+	training loss=41.5118
+	training loss=32.1567
+	training loss=26.9802
+	training loss=23.6077
+	training loss=21.2124
+	training loss=19.4194
+	training loss=18.0117
+	training loss=16.9001
+	training loss=15.9727
+	training loss=15.2058
+	training loss=14.5477
+	training loss=13.9766
+the save path is  checkpoints/cws.ckpt/_plus-1
+	training 224444, loss=13.6223 
+Epoch training 224444, loss=13.6223, speed=518.505 s/epoch
+EPOCH 2， lr=0.01
+	training loss=6.59024
+	training loss=6.60373
+	training loss=6.62612
+	training loss=6.66365
+	training loss=6.67012
+	training loss=6.65564
+	training loss=6.64862
+	training loss=6.64184
+	training loss=6.64492
+	training loss=6.64721
+	training loss=6.64398
+	training loss=6.63564
+	training loss=6.6303
+the save path is  checkpoints/cws.ckpt/_plus-2
+	training 224444, loss=6.62703 
+Epoch training 224444, loss=6.62703, speed=514.192 s/epoch
+EPOCH 3， lr=0.01
+	training loss=6.07693
+	training loss=6.12166
+	training loss=6.22669
+	training loss=6.2952
+	training loss=6.32091
+	training loss=6.35299
+	training loss=6.37089
+	training loss=6.38277
+	training loss=6.39082
+	training loss=6.40549
+	training loss=6.40625
+	training loss=6.41451
+	training loss=6.42919
+	training loss=6.43427 ;  valid acc= 0.89322 
+the save path is  checkpoints/cws.ckpt/_plus-3
+	training 224444, loss=6.43427 
+Epoch training 224444, loss=6.43427, speed=637.039 s/epoch
+EPOCH 4， lr=0.01
+	training loss=6.21617
+	training loss=6.21386
+	training loss=6.27322
+	training loss=6.27607
+	training loss=6.30121
+	training loss=6.31797
+	training loss=6.3438
+	training loss=6.35595
+	training loss=6.36203
+	training loss=6.35911
+	training loss=6.36587
+	training loss=6.37677
+	training loss=6.39356
+the save path is  checkpoints/cws.ckpt/_plus-4
+	training 224444, loss=6.38602 
+Epoch training 224444, loss=6.38602, speed=515.321 s/epoch
+EPOCH 5， lr=0.01
+	training loss=6.07693
+	training loss=6.12981
+	training loss=6.18735
+	training loss=6.22019
+	training loss=6.27372
+	training loss=6.30043
+	training loss=6.31992
+	training loss=6.33205
+	training loss=6.34402
+	training loss=6.36486
+	training loss=6.36792
+	training loss=6.36603
+	training loss=6.37497
+the save path is  checkpoints/cws.ckpt/_plus-5
+	training 224444, loss=6.37564 
+Epoch training 224444, loss=6.37564, speed=519.118 s/epoch
+EPOCH 6， lr=0.01
+	training loss=6.11921
+	training loss=6.16163
+	training loss=6.19279
+	training loss=6.23735
+	training loss=6.28032
+	training loss=6.30451
+	training loss=6.30126
+	training loss=6.32506
+	training loss=6.325
+	training loss=6.33108
+	training loss=6.33719
+	training loss=6.35191
+	training loss=6.36499
+	training loss=6.36508 ;  valid acc= 0.894718 
+the save path is  checkpoints/cws.ckpt/_plus-6
+	training 224444, loss=6.36508 
+Epoch training 224444, loss=6.36508, speed=636.031 s/epoch
+EPOCH 7， lr=0.01
+	training loss=6.24987
+	training loss=6.20143
+	training loss=6.19296
+	training loss=6.24493
+	training loss=6.3211
+	training loss=6.35107
+	training loss=6.38046
+	training loss=6.38791
+	training loss=6.39721
+	training loss=6.39873
+	training loss=6.40247
+	training loss=6.40356
+	training loss=6.409
+the save path is  checkpoints/cws.ckpt/_plus-7
+	training 224444, loss=6.40917 
+Epoch training 224444, loss=6.40917, speed=519.411 s/epoch
+EPOCH 8， lr=0.01
+	training loss=6.28065
+	training loss=6.34409
+	training loss=6.34023
+	training loss=6.33651
+	training loss=6.34207
+	training loss=6.34588
+	training loss=6.35367
+	training loss=6.37113
+	training loss=6.38365
+	training loss=6.38541
+	training loss=6.39642
+	training loss=6.40708
+	training loss=6.41232
+the save path is  checkpoints/cws.ckpt/_plus-8
+	training 224444, loss=6.41328 
+Epoch training 224444, loss=6.41328, speed=519.721 s/epoch
+EPOCH 9， lr=0.01
+	training loss=6.27093
+	training loss=6.27174
+	training loss=6.31371
+	training loss=6.34665
+	training loss=6.36002
+	training loss=6.3701
+	training loss=6.39557
+	training loss=6.40085
+	training loss=6.40664
+	training loss=6.41449
+	training loss=6.41562
+	training loss=6.42415
+	training loss=6.43062
+	training loss=6.43308 ;  valid acc= 0.896374 
+the save path is  checkpoints/cws.ckpt/_plus-9
+	training 224444, loss=6.43308 
+Epoch training 224444, loss=6.43308, speed=630.968 s/epoch
+EPOCH 10， lr=0.003
+	training loss=5.75262
+	training loss=5.60703
+	training loss=5.44044
+	training loss=5.34324
+	training loss=5.26316
+	training loss=5.18443
+	training loss=5.12413
+	training loss=5.05813
+	training loss=5.01114
+	training loss=4.96858
+	training loss=4.92148
+	training loss=4.88339
+	training loss=4.85883
+the save path is  checkpoints/cws.ckpt/_plus-10
+	training 224444, loss=4.83111 
+Epoch training 224444, loss=4.83111, speed=520.09 s/epoch
+EPOCH 11， lr=0.003
+	training loss=4.10712
+	training loss=4.11845
+	training loss=4.1077
+	training loss=4.13337
+	training loss=4.12367
+	training loss=4.11025
+	training loss=4.10012
+	training loss=4.08058
+	training loss=4.0762
+	training loss=4.07418
+	training loss=4.07473
+	training loss=4.06854
+	training loss=4.06036
+the save path is  checkpoints/cws.ckpt/_plus-11
+	training 224444, loss=4.05407 
+Epoch training 224444, loss=4.05407, speed=518.135 s/epoch
+EPOCH 12， lr=0.003
+	training loss=3.78014
+	training loss=3.73109
+	training loss=3.73106
+	training loss=3.72293
+	training loss=3.72265
+	training loss=3.72753
+	training loss=3.73461
+	training loss=3.72354
+	training loss=3.72768
+	training loss=3.74069
+	training loss=3.74672
+	training loss=3.74566
+	training loss=3.74497
+	training loss=3.74326 ;  valid acc= 0.932083 
+the save path is  checkpoints/cws.ckpt/_plus-12
+	training 224444, loss=3.74326 
+Epoch training 224444, loss=3.74326, speed=637.234 s/epoch
+EPOCH 13， lr=0.003
+	training loss=3.44944
+	training loss=3.46795
+	training loss=3.45604
+	training loss=3.45967
+	training loss=3.46833
+	training loss=3.49087
+	training loss=3.50178
+	training loss=3.5069
+	training loss=3.5231
+	training loss=3.52515
+	training loss=3.53275
+	training loss=3.52696
+	training loss=3.52616
+the save path is  checkpoints/cws.ckpt/_plus-13
+	training 224444, loss=3.52546 
+Epoch training 224444, loss=3.52546, speed=517.204 s/epoch
+EPOCH 14， lr=0.003
+	training loss=3.28025
+	training loss=3.30974
+	training loss=3.33665
+	training loss=3.33108
+	training loss=3.32544
+	training loss=3.33565
+	training loss=3.3415
+	training loss=3.34191
+	training loss=3.34718
+	training loss=3.36236
+	training loss=3.36333
+	training loss=3.36508
+	training loss=3.37059
+the save path is  checkpoints/cws.ckpt/_plus-14
+	training 224444, loss=3.36549 
+Epoch training 224444, loss=3.36549, speed=521.347 s/epoch
+EPOCH 15， lr=0.003
+	training loss=3.12636
+	training loss=3.12412
+	training loss=3.17652
+	training loss=3.18155
+	training loss=3.18558
+	training loss=3.19231
+	training loss=3.18997
+	training loss=3.19486
+	training loss=3.20061
+	training loss=3.20268
+	training loss=3.21073
+	training loss=3.22365
+	training loss=3.22707
+	training loss=3.22926 ;  valid acc= 0.939892 
+the save path is  checkpoints/cws.ckpt/_plus-15
+	training 224444, loss=3.22926 
+Epoch training 224444, loss=3.22926, speed=636.564 s/epoch
+EPOCH 16， lr=0.003
+	training loss=3.00451
+	training loss=3.00485
+	training loss=3.02382
+	training loss=3.04544
+	training loss=3.05448
+	training loss=3.0668
+	training loss=3.07108
+	training loss=3.08139
+	training loss=3.09383
+	training loss=3.10152
+	training loss=3.10999
+	training loss=3.11513
+	training loss=3.12469
+the save path is  checkpoints/cws.ckpt/_plus-16
+	training 224444, loss=3.12651 
+Epoch training 224444, loss=3.12651, speed=518.537 s/epoch
+EPOCH 17， lr=0.003
+	training loss=2.90023
+	training loss=2.92705
+	training loss=2.94542
+	training loss=2.9576
+	training loss=2.96242
+	training loss=2.97459
+	training loss=2.98412
+	training loss=2.99016
+	training loss=3.00086
+	training loss=3.01345
+	training loss=3.0234
+	training loss=3.02685
+	training loss=3.03359
+the save path is  checkpoints/cws.ckpt/_plus-17
+	training 224444, loss=3.03593 
+Epoch training 224444, loss=3.03593, speed=521.143 s/epoch
+EPOCH 18， lr=0.001
+	training loss=2.79916
+	training loss=2.73996
+	training loss=2.69819
+	training loss=2.68843
+	training loss=2.67648
+	training loss=2.66935
+	training loss=2.65255
+	training loss=2.64254
+	training loss=2.63795
+	training loss=2.63447
+	training loss=2.62313
+	training loss=2.61326
+	training loss=2.60267
+	training loss=2.59478 ;  valid acc= 0.949717 
+the save path is  checkpoints/cws.ckpt/_plus-18
+	training 224444, loss=2.59478 
+Epoch training 224444, loss=2.59478, speed=636.331 s/epoch
+EPOCH 19， lr=0.001
+	training loss=2.32752
+	training loss=2.32654
+	training loss=2.32452
+	training loss=2.31884
+	training loss=2.31875
+	training loss=2.32242
+	training loss=2.32475
+	training loss=2.32385
+	training loss=2.32323
+	training loss=2.31938
+	training loss=2.3136
+	training loss=2.31272
+	training loss=2.31219
+the save path is  checkpoints/cws.ckpt/_plus-19
+	training 224444, loss=2.3114 
+Epoch training 224444, loss=2.3114, speed=519.804 s/epoch
+EPOCH 20， lr=0.001
+	training loss=2.1656
+	training loss=2.1543
+	training loss=2.14199
+	training loss=2.14733
+	training loss=2.15083
+	training loss=2.14962
+	training loss=2.15105
+	training loss=2.14763
+	training loss=2.15258
+	training loss=2.16006
+	training loss=2.16055
+	training loss=2.16354
+	training loss=2.16801
+the save path is  checkpoints/cws.ckpt/_plus-20
+	training 224444, loss=2.1695 
+Epoch training 224444, loss=2.1695, speed=520.114 s/epoch
+EPOCH 21， lr=0.001
+	training loss=2.033
+	training loss=2.02741
+	training loss=2.01976
+	training loss=2.02732
+	training loss=2.03829
+	training loss=2.03999
+	training loss=2.04961
+	training loss=2.05616
+	training loss=2.05609
+	training loss=2.06193
+	training loss=2.06652
+	training loss=2.07069
+	training loss=2.07357
+	training loss=2.07407 ;  valid acc= 0.954568 
+the save path is  checkpoints/cws.ckpt/_plus-21
+	training 224444, loss=2.07407 
+Epoch training 224444, loss=2.07407, speed=634.753 s/epoch
+EPOCH 22， lr=0.001
+	training loss=1.91927
+	training loss=1.91642
+	training loss=1.94263
+	training loss=1.93772
+	training loss=1.94315
+	training loss=1.94991
+	training loss=1.96487
+	training loss=1.97211
+	training loss=1.97231
+	training loss=1.97647
+	training loss=1.97776
+	training loss=1.98072
+	training loss=1.98315
+the save path is  checkpoints/cws.ckpt/_plus-22
+	training 224444, loss=1.98271 
+Epoch training 224444, loss=1.98271, speed=520.306 s/epoch
+EPOCH 23， lr=0.001
+	training loss=1.86581
+	training loss=1.8766
+	training loss=1.87529
+	training loss=1.88489
+	training loss=1.89135
+	training loss=1.89203
+	training loss=1.89668
+	training loss=1.89598
+	training loss=1.90125
+	training loss=1.90926
+	training loss=1.91109
+	training loss=1.91387
+	training loss=1.91518
+the save path is  checkpoints/cws.ckpt/_plus-23
+	training 224444, loss=1.91658 
+Epoch training 224444, loss=1.91658, speed=521.247 s/epoch
+EPOCH 24， lr=0.001
+	training loss=1.83699
+	training loss=1.8299
+	training loss=1.82066
+	training loss=1.82504
+	training loss=1.82247
+	training loss=1.82645
+	training loss=1.8327
+	training loss=1.83868
+	training loss=1.83909
+	training loss=1.84209
+	training loss=1.84682
+	training loss=1.85009
+	training loss=1.85364
+	training loss=1.85331 ;  valid acc= 0.95648 
+the save path is  checkpoints/cws.ckpt/_plus-24
+	training 224444, loss=1.85331 
+Epoch training 224444, loss=1.85331, speed=634.947 s/epoch
+**TEST RESULT:
+**Test 70139, acc=0.957113
