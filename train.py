@@ -13,8 +13,8 @@ tf.app.flags.DEFINE_string('ckpt_path', 'checkpoints/cws.finetune.ckpt/', 'check
 tf.app.flags.DEFINE_integer('embed_size', 256, 'embedding size')
 tf.app.flags.DEFINE_integer('hidden_size', 512, 'hidden layer node number')
 tf.app.flags.DEFINE_integer('batch_size', 64, 'batch size')
-tf.app.flags.DEFINE_integer('epoch', 9, 'training epoch')
-tf.app.flags.DEFINE_float('lr', 0.01, 'learning rate')
+tf.app.flags.DEFINE_integer('epoch', 24, 'training epoch')
+tf.app.flags.DEFINE_float('lr', 0.1, 'learning rate')
 tf.app.flags.DEFINE_string('save_path','checkpoints/cws.ckpt/','new model save path')
 
 FLAGS = tf.app.flags.FLAGS
@@ -38,19 +38,25 @@ class BiLSTMTrain(object):
        # saver.restore(sess, ckpt)
        # print('-->finetune the ckeckpoint:'+ckpt+'...')
        ##############
-        max_epoch = 5
+        epoch_1 = 8
+        epoch_2 = 16
         tr_batch_size = FLAGS.batch_size
         max_max_epoch = FLAGS.epoch  # Max epoch
-        display_num = 5  # Display 5 pre epoch
+        display_num = 8  # Display 5 pre epoch
         tr_batch_num = int(self.data_train.y.shape[0] / tr_batch_size)
-        # tr_batch_num = tr_batch_size
+        
         display_batch = int(tr_batch_num / display_num)  
-        saver = tf.train.Saver(max_to_keep=10)  
+        saver = tf.train.Saver(max_to_keep=10)
+
+        f = open('report.log', 'w')
+
         for epoch in range(max_max_epoch): 
             _lr = FLAGS.lr
-            if epoch > max_epoch:
-                _lr *= 1
-            print('EPOCH %d， lr=%g' % (epoch + 1, _lr))
+            if epoch > epoch_1:
+                _lr = 0.03
+            if epoch > epoch_2:
+                _lr = 0.01
+            print('EPOCH %d， lr=%g' % (epoch + 1, _lr), file=f)
             start_time = time.time()
             _losstotal = 0.0
             show_loss = 0.0
@@ -64,23 +70,27 @@ class BiLSTMTrain(object):
                 _loss, _ = sess.run(fetches, feed_dict)  
                 _losstotal += _loss
                 show_loss += _loss
+
                 if (batch + 1) % display_batch == 0:
+                    print('\ttraining loss=%g ' % (show_loss / display_batch), file=f)
+
+                if (epoch + 1) % 8 == 0:
                     valid_acc = self.test_epoch(self.data_valid, sess)  # valid
                     print('\ttraining loss=%g ;  valid acc= %g ' % (show_loss / display_batch,
-                                                                             valid_acc))
+                                                                             valid_acc), file=f)
                     show_loss = 0.0
             mean_loss = _losstotal / tr_batch_num
             if (epoch + 1) % 1 == 0:  # Save once per epoch
                 save_path = saver.save(sess, self.model.model_save_path+'_plus', global_step=(epoch + 1))
-                print('the save path is ', save_path)
-            print('\ttraining %d, loss=%g ' % (self.data_train.y.shape[0], mean_loss))
+                print('the save path is ', save_path, file=f)
+            print('\ttraining %d, loss=%g ' % (self.data_train.y.shape[0], mean_loss), file=f)
             print('Epoch training %d, loss=%g, speed=%g s/epoch' % (
-                self.data_train.y.shape[0], mean_loss, time.time() - start_time))
+                self.data_train.y.shape[0], mean_loss, time.time() - start_time), file=f)
 
         # testing
-        print('**TEST RESULT:')
+        print('**TEST RESULT:', file=f)
         test_acc = self.test_epoch(self.data_test, sess)
-        print('**Test %d, acc=%g' % (self.data_test.y.shape[0], test_acc))
+        print('**Test %d, acc=%g' % (self.data_test.y.shape[0], test_acc), file=f)
         sess.close()
 
     def test_epoch(self, dataset=None, sess=None):
